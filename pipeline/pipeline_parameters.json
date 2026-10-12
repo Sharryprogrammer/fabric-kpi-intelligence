@@ -1,0 +1,20 @@
+{
+  "parameters": {
+    "sourcePath": {
+      "type": "string",
+      "defaultValue": "Files/landing/sales_orders.csv"
+    },
+    "loadMode": {
+      "type": "string",
+      "defaultValue": "overwrite"
+    }
+  },
+  "activities": [
+    {
+      "name": "Build KPI tables",
+      "type": "Notebook",
+      "notebook": "01_build_kpis",
+      "timeout": "00:30:00"
+    }
+  ]
+}

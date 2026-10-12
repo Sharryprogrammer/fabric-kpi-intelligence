@@ -1,0 +1,23 @@
+Total Revenue =
+SUM ( gold_daily_kpis[revenue] )
+
+Total Gross Margin =
+SUM ( gold_daily_kpis[gross_margin] )
+
+Completed Orders =
+SUM ( gold_daily_kpis[completed_orders] )
+
+Average Order Value =
+DIVIDE ( [Total Revenue], [Completed Orders] )
+
+Gross Margin % =
+DIVIDE ( [Total Gross Margin], [Total Revenue] )
+
+Revenue Previous Day =
+CALCULATE (
+    [Total Revenue],
+    DATEADD ( gold_daily_kpis[order_date], -1, DAY )
+)
+
+Revenue Day-over-Day % =
+DIVIDE ( [Total Revenue] - [Revenue Previous Day], [Revenue Previous Day] )
